@@ -1,0 +1,34 @@
+// wap for kth occurence of odd integer 
+// -1 will terminate the string
+import java.util.Scanner;
+public class prac1 {
+    public static void main(String[] args) {
+        Scanner ob = new Scanner(System.in);
+        System.out.print("Enter integer :- ");
+        int n = ob.nextInt();
+        System.out.println("Enter sequence");
+        int arr[] = new int[50];
+        int i,j = 0;
+        int count = 0;
+         for (i = 0; i < 50; i++) {
+             arr[i] = ob.nextInt();
+             count++;
+             if(arr[i] == -1){
+                ob.close();
+                break;
+             }
+         }
+       
+        for(i=0; i<count-1; i++){
+            if(arr[i]%2 != 0){
+                 j++;
+                 if(j == n){
+                    System.out.println(arr[i]);
+                    return;
+                 }          
+    }
+    }
+    System.out.println(-1);
+    return; 
+}
+}
