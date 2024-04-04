@@ -1,0 +1,30 @@
+// sum of elements
+
+import java.util.Scanner;
+public class prac2 {
+    public static void main(String[] args) {
+
+         Scanner ob = new Scanner(System.in);
+        System.out.print("Enter size :- ");
+        int n = ob.nextInt();
+        System.out.println("Enter sequence");
+        int arr[] = new int[50];
+        for (int i = 0; i < n; i++) {
+            arr[i] = ob.nextInt();
+            }
+            ob.close(); 
+        int sum,res = 0;
+         sum = 0;
+             
+             for (int i = 0; i < n; i++) {
+                sum = sum+arr[i];
+                }
+                sum = sum/n;
+                for (int i = 0; i < n; i++) {
+                    if(arr[i] >= sum){
+                        res += arr[i];
+                    }
+                    }
+                    System.err.println(res);
+         }
+    }
