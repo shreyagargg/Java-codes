@@ -1,0 +1,79 @@
+
+import java.util.Random;
+import java.util.Scanner;
+
+class guess_thenum {
+    public static int b;
+    public  guess_thenum(){
+        Random a = new Random();
+      //  a.nextInt(max+1 - min)+min;
+         b = a.nextInt(100+1 - 1)+1;
+ // System.out.println(b);
+    }
+
+  public static int no_of_guess =0;
+     public static int getNo_of_guess() {
+         return no_of_guess;
+     }
+     public static void setNo_of_guess(int nos) {
+         no_of_guess = nos;
+     }
+
+    public static void user_ip(int flag){
+        if(flag == 0){
+     //   guess_thenum ob = new guess_thenum();
+        System.out.println("guess num btw 1-100");
+        no_of_guess++;
+        Scanner oo = new Scanner(System.in);
+        int n = oo.nextInt();
+        is_correct_num(n,b);
+        oo.close();
+        }
+
+        else{
+            System.out.println("guess num btw 1-100");
+            no_of_guess++;
+            Scanner oo = new Scanner(System.in);
+            int n = oo.nextInt();
+            is_correct_num(n,b);
+            oo.close();
+        }
+    }
+    
+    public static void is_correct_num(int n, int num){
+    // n - user input 
+    // num - random
+ 
+        if(n == num){
+            System.out.println("correct guess");
+            return;
+         }
+         else{
+         System.out.print("oops another chance ");
+         if(n>num && (n-num) > 10){
+            System.out.println("think of a small number");
+         }
+         if(n>num && (n-num) <= 10){
+            System.out.println("think of a small number , you are close");
+         }
+         if(n<num && (num-n) > 10){
+            System.out.println("think of a large number");
+         }
+         if(n<num && (num-n) <= 10){
+            System.out.println("think of a large number, you are close");
+         }
+         user_ip(1);
+
+         }  
+    }
+
+    public static void main(String[] args) {
+      guess_thenum ob = new guess_thenum();
+       // System.out.println(ob.b);
+      user_ip(0);
+   
+  System.out.println("\nnow total guess :- ");
+  setNo_of_guess(no_of_guess);
+ System.out.println(getNo_of_guess());
+    }
+}
